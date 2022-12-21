@@ -1,6 +1,8 @@
-# include <iostream> 
+
+# include <iostream>
 
 using namespace std;
+
 
 char randomLowercase ()
 {
