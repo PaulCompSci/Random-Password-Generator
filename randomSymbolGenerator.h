@@ -36,7 +36,6 @@ char randomSymbol()
 {
    srand(time(0)) ;
    int choice = rand() % 4+ 1 ;
-   cout <<"this is the choice : " << choice <<endl; 
    if (choice == 1) 
     return randomSymbol1() ;
    else if (choice ==2 ) 
