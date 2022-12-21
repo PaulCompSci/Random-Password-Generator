@@ -1,9 +1,19 @@
-# include <iostream>
+# include <iostream> 
+
+using namespace std;
+
+char randomLowercase ()
+{
+    //ascii code : 97 -> 122 
+    return rand()% 26 + 97;
+}
 
 
-using  namespace std;
-
-
+char randomNumber() 
+{
+    //ascii code :  48 -> 57   
+    return rand() %  10+ 48;
+}
 
 char randomSymbol1()
 {
@@ -41,4 +51,11 @@ char randomSymbol()
    else 
     return randomSymbol4() ; 
     
+}
+
+
+char randomUppercase() 
+{
+    // ascii code : 65 -> 90 
+    return rand()% 26 + 65 ;
 }
