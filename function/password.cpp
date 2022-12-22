@@ -142,3 +142,16 @@ string uppercaseAndSymbolPassword(const int& numberOfUppercase , const int& numb
     return password;
 
 }
+
+string lowercaesAndUppercasePassword (const int& numberOfLowercase , const int& numberOfUppercase) 
+{
+    string password = "";
+    for(int i = 0 ; i < numberOfLowercase ; i++)
+        password.push_back(randomLowercase());
+    for(int i = 0 ; i < numberOfUppercase ; i++)
+        password.push_back(randomUppercase());
+
+    random_shuffle(password.begin() , password.end());
+
+    return password;
+}
