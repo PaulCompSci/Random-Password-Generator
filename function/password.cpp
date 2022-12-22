@@ -98,3 +98,18 @@ string numberAndUppercasePassword(const int& numberOfNumber , const int& numberO
 
     return password;
 }
+
+string numberAndSymbolPassword(const int& numberOfNumber,  const int& numberOfSymbol)
+{
+    string password = "";
+
+    for(int i = 0 ; i < numberOfNumber ; i++)
+        password.push_back(randomNumber());
+    for(int i = 0 ; i < numberOfSymbol ; i++)
+        password.push_back(randomSymbol());
+    
+    random_shuffle(password.begin() , password.end());
+
+    return password;
+    
+}
