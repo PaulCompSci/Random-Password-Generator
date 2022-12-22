@@ -23,9 +23,10 @@ int main()
         
     for (int i = 4; i <= 128 ; i++)
         cout << allUppercasePassword(i) <<endl; 
-        
-    
 
+    
+    for(int i = 4 ; i <= 128 ; i++)
+        cout << numberAndLowercasePassword(i/2, i- i /2 )<<endl;
 
 
 

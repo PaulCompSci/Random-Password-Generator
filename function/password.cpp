@@ -1,6 +1,8 @@
 # include "random_char.h"
+# include <algorithm>
 # include <string> 
 # include <iostream> 
+
 
 using namespace std;
 
@@ -66,4 +68,19 @@ string allUppercasePassword(const int& size)
     }
 
     return password;
+}
+
+string numberAndLowercasePassword(const int& numberOfNumber , const int& numberOfLowercase) 
+{
+    string password = "";
+
+    for(int i = 0 ; i < numberOfNumber ; i++)
+        password.push_back(randomNumber());
+    for(int i = 0 ; i < numberOfLowercase ; i++)
+        password.push_back(randomLowercase());
+    
+    random_shuffle(password.begin() , password.end());
+    
+    return password;
+
 }
