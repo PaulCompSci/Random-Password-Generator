@@ -212,3 +212,19 @@ string numberUppercaseSymbolPassword(const int& numberOfNumber , const int& numb
 
     
 }
+
+string numberLowercaseSymbolPassword(const int& numberOfNumber, const int& numberOfLowercase, const int& numberOfSymbol) 
+{
+    string password = "";
+    
+    for(int i = 0 ; i < numberOfNumber ; i++)
+        password.push_back(randomNumber());
+    for(int i = 0 ; i < numberOfLowercase ; i++)
+        password.push_back(randomLowercase());
+    for(int i = 0 ; i < numberOfSymbol ; i++)
+        password.push_back(randomSymbol());
+
+        random_shuffle(password.begin() , password.end());
+
+    return password;
+}

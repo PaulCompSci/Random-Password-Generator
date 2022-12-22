@@ -46,6 +46,6 @@ int main()
     // for(int i = 4 ; i <= 128 ; i++)
     //     cout << lowercaesAndUppercasePassword(i/2 , i - i/2 ) <<endl; 
 
-cout << numberUppercaseSymbolPassword(12,23,45) <<endl;
+cout << numberLowercaseSymbolPassword(12,23,45) <<endl;
     return 0 ;
 }

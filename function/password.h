@@ -24,3 +24,4 @@ string lowercaesAndUppercasePassword (const int& numberOfLowercase , const int& 
 string lowercaseUppercaseNumberPassword(const int& numberOfUppercase , const int& numberOfLowercase , const int& numberOfNumber);
 string lowercaseUppercaseSymbolPassword(const int& numberOfLowercase, const int& numberOfUppercase , const int& numberOfSymbol);
 string numberUppercaseSymbolPassword(const int& numberOfNumber , const int& numberOfUppercase , const int& numberOfSymbol);
+string numberLowercaseSymbolPassword(const int& numberOfNumber, const int& numberOfLowercase, const int& numberOfSymbol) ;
