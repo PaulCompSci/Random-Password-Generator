@@ -41,4 +41,29 @@ string allLowercasePassword(const int& size)
     return password;
 }
 
+string allSymbolPassword(const int& size) 
+{ 
+    string password = "";
+    while (allCharactersSame(password))
+    {
+        password.clear() ;
+        for(int i = 0 ; i < size ; i++)
+            password.push_back(randomSymbol()) ;
+    }
+    return password;
+}
 
+string allUppercasePassword(const int& size) 
+{
+    string password = "" ;
+    while (allCharactersSame(password))
+    {
+        password.clear() ;
+        for(int i = 0 ; i < size ; i++) 
+        {
+             password.push_back(randomUppercase()) ;
+        }
+    }
+
+    return password;
+}

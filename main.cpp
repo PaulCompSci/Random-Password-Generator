@@ -17,6 +17,13 @@ int main()
         cout << allLowercasePassword(i) <<endl;
     }
 
+
+    for(int i = 4 ; i <= 128 ; i++)
+        cout << allSymbolPassword(i) <<endl; 
+        
+    for (int i = 4; i <= 128 ; i++)
+        cout << allUppercasePassword(i) <<endl; 
+        
     
 
 
