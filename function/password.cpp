@@ -155,3 +155,23 @@ string lowercaesAndUppercasePassword (const int& numberOfLowercase , const int& 
 
     return password;
 }
+
+string lowercaseUppercaseNumberPassword(const int& numberOfUppercase , const int& numberOfLowercase , const int& numberOfNumber)
+{
+    string password = "";
+
+    for(int i = 0 ; i < numberOfLowercase ; i++)
+        password.push_back(randomLowercase());
+
+    for(int i = 0 ; i < numberOfUppercase ; i++)
+        password.push_back(randomUppercase());
+
+    for(int i = 0 ; i < numberOfNumber ; i++)
+        password.push_back(randomNumber());
+
+    random_shuffle(password.begin() , password.end());
+
+    return password;
+
+
+}

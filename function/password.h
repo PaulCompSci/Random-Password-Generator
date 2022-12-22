@@ -15,3 +15,4 @@ string numberAndSymbolPassword(const int& numberOfNumber,  const int& numberOfSy
 string lowercaseAndSymbolPassword(const int& numberOfLowercase , const int& numberOfSymbol) ;
 string uppercaseAndSymbolPassword(const int& numberOfUppercase , const int& numberOfSymbol);
 string lowercaesAndUppercasePassword (const int& numberOfLowercase , const int& numberOfUppercase) ;
+string lowercaseUppercaseNumberPassword(const int& numberOfUppercase , const int& numberOfLowercase , const int& numberOfNumber);
