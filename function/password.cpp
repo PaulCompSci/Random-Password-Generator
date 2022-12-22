@@ -128,3 +128,17 @@ string lowercaseAndSymbolPassword(const int& numberOfLowercase , const int& numb
     return password;
 
 }
+
+string uppercaseAndSymbolPassword(const int& numberOfUppercase , const int& numberOfSymbol)
+{
+    string password = "";
+    for(int i = 0 ; i < numberOfUppercase ; i++)    
+        password.push_back(randomUppercase());
+    for(int i = 0 ; i < numberOfSymbol ; i++)
+        password.push_back(randomSymbol()) ;
+    
+    random_shuffle(password.begin() , password.end());
+
+    return password;
+
+}
