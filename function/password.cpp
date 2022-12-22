@@ -113,3 +113,18 @@ string numberAndSymbolPassword(const int& numberOfNumber,  const int& numberOfSy
     return password;
     
 }
+
+string lowercaseAndSymbolPassword(const int& numberOfLowercase , const int& numberOfSymbol) 
+{
+    string password = "" ;
+    for(int i = 0 ; i < numberOfLowercase ; i++)
+        password.push_back(randomLowercase());
+    
+    for(int i  = 0 ; i < numberOfSymbol  ; i++)
+        password.push_back(randomSymbol()) ;
+
+    random_shuffle(password.begin() , password.end());
+
+    return password;
+
+}
