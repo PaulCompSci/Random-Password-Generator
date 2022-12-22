@@ -18,14 +18,27 @@ string allNumberPassword(const int& size )
 {
 
    
-    return password; string password = "";
+    string password = "";
     while (allCharactersSame(password))
     {
         password.clear() ;
         for(int i = 0 ; i < size ; i++)
             password.push_back(randomNumber()) ;
     }
+    return password;
 
+}
+
+string allLowercasePassword(const int& size) 
+{ 
+    string password = "";
+    while (allCharactersSame(password))
+    {
+        password.clear() ;
+        for(int i = 0 ; i < size ; i++)
+            password.push_back(randomLowercase()) ;
+    }
+    return password;
 }
 
 

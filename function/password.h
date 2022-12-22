@@ -5,3 +5,4 @@ using namespace std;
 
 bool allCharactersSame(string s);
 string allNumberPassword(const int& size );
+string allLowercasePassword(const int& size) ;

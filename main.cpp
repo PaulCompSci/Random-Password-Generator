@@ -12,6 +12,13 @@ int main()
         cout << allNumberPassword(i) <<endl;
     }
 
+    for(int i = 4 ; i <= 128 ; i++)
+    {
+        cout << allLowercasePassword(i) <<endl;
+    }
+
+    
+
 
 
 
