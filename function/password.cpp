@@ -80,7 +80,21 @@ string numberAndLowercasePassword(const int& numberOfNumber , const int& numberO
         password.push_back(randomLowercase());
     
     random_shuffle(password.begin() , password.end());
-    
+
     return password;
 
+}
+
+string numberAndUppercasePassword(const int& numberOfNumber , const int& numberOfUppercase) 
+{
+    string password = "";
+
+    for(int i = 0 ; i < numberOfNumber ; i++)
+        password.push_back(randomNumber());
+    for(int i = 0 ; i < numberOfUppercase ; i++)
+        password.push_back(randomUppercase());
+    
+    random_shuffle(password.begin() , password.end());
+
+    return password;
 }
