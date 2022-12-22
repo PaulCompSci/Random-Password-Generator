@@ -194,3 +194,21 @@ string lowercaseUppercaseSymbolPassword(const int& numberOfLowercase, const int&
     return password;
 
 }
+
+string numberUppercaseSymbolPassword(const int& numberOfNumber , const int& numberOfUppercase , const int& numberOfSymbol) 
+{ 
+    string password = "" ;
+    for(int i = 0 ; i < numberOfNumber ; i++)
+        password.push_back(randomNumber());
+    for(int i = 0 ; i < numberOfUppercase ; i++)
+        password.push_back(randomUppercase());
+
+    for(int i  = 0 ; i < numberOfSymbol  ; i++)
+        password.push_back(randomSymbol()) ;
+
+    random_shuffle(password.begin() , password.end());
+
+    return password;
+
+    
+}

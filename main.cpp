@@ -6,7 +6,9 @@
 using namespace std;
 
 int main() 
-{ 
+
+{
+    srand(time(0)) ; 
     // for(int i = 4 ; i <= 128 ; i++)
     // {
     //     cout << allNumberPassword(i) <<endl;
@@ -44,6 +46,6 @@ int main()
     // for(int i = 4 ; i <= 128 ; i++)
     //     cout << lowercaesAndUppercasePassword(i/2 , i - i/2 ) <<endl; 
 
-cout << lowercaseUppercaseSymbolPassword(12,23,45) <<endl;
+cout << numberUppercaseSymbolPassword(12,23,45) <<endl;
     return 0 ;
 }
