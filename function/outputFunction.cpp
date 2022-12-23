@@ -58,7 +58,7 @@ int returnChoice ()
         cout << "10. lowercase letter and uppercase letter"<<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
 
-        cout << "11. number , lowercase letter and uppercase letter "<<endl;
+        cout << "11. lowercase letter , uppercase letter and number "<<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
         cout <<"12. lowercase letter , uppercase letter and symbol" <<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
@@ -138,4 +138,23 @@ string returnTwoTypePassword ( const int& choice , const int& numberOfType1 , co
 }
 
 
+string returnThreeTypePassword(const int& choice , const int& numberOfType1 , const int& numberOfType2 , const int&  numberOfType3) 
+{ 
+    if (choice == 11) 
+        return lowercaseUppercaseNumberPassword (numberOfType1 , numberOfType2 , numberOfType3);
+    else if ( choice == 12)
+        return lowercaseUppercaseSymbolPassword (numberOfType1 , numberOfType2 , numberOfType3);
+
+    else if (choice == 13) 
+        return numberLowercaseSymbolPassword(numberOfType1 , numberOfType2 , numberOfType3);
+    else   
+        return numberUppercaseSymbolPassword(numberOfType1 , numberOfType2 , numberOfType3);
+
+}
+
+string returnFourTypePassword( const int& numberOfType1 , const int& numberOfType2 , const int&  numberOfType3 , const int& numberOfType4) 
+
+{
+    return numberLowercaseUppercaseSymbolPassword(numberOfType1, numberOfType2, numberOfType3, numberOfType4);
+}
 

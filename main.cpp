@@ -9,6 +9,7 @@ using namespace std;
 
 
 
+
 int main() 
 {
     srand(time(0)) ; 
@@ -17,12 +18,16 @@ int main()
     // cout <<endl; 
     // int size = returnSize()  ;
     // int choice = returnChoice() ; 
-    for(int i = 0 ; i < 1000 ; i++ )
+    for(int i = 0 ; i <10 ; i++ )
     {
-        cout << returnTwoTypePassword ( 10 , 3 , 6) <<endl; 
-    
+        cout << returnFourTypePassword(20,20,20,20) << endl;  
+        cout <<endl;    
     }
+        
+
+
     
+
     
 
     return 0 ;
