@@ -25,3 +25,6 @@ string lowercaseUppercaseNumberPassword(const int& numberOfUppercase , const int
 string lowercaseUppercaseSymbolPassword(const int& numberOfLowercase, const int& numberOfUppercase , const int& numberOfSymbol);
 string numberUppercaseSymbolPassword(const int& numberOfNumber , const int& numberOfUppercase , const int& numberOfSymbol);
 string numberLowercaseSymbolPassword(const int& numberOfNumber, const int& numberOfLowercase, const int& numberOfSymbol) ;
+
+//password with four different type of character
+string numberLowercaseUppercaseSymbolPassword(const int& numberOfNumber,const int& numberOfLowercase, const int& numberOfUppercase , const int& numberOfSymbol );
