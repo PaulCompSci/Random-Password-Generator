@@ -11,14 +11,15 @@ using namespace std;
 
 int main() 
 {
-    srand(time(0)) ;
-    cout << allUppercasePassword (5) <<endl; 
-    type_text("welcome to random password generator");
-    cout <<endl; 
-    int size = returnSize()  ;
-    int choice = returnChoice() ;   
-
+    for(int i =  4 ; i<= 128 ; i++)
+    {
+        for(int j = 1 ; j<= 4 ; j++)
+        {
+            cout << returnSameTypePassword(j , i) <<endl;
+        }
+     cout <<endl <<endl; 
     
+    }
     
 
     return 0 ;

@@ -23,19 +23,22 @@ void type_text(const std::string& text)
     
 }
 
+
+
+
+
 int returnChoice ()
 {
-    int choice  = 0 ;
-    
+    int  choice  = 0 ;
     cout <<endl; 
 
-    while ( choice <= 0 || choice >15 )
+    while ( choice <= 0 || choice > 15 )
     {
         type_text("below is a list of password combination available ") ;
         cout <<endl;
         cout << "1. all number"<<endl; 
         this_thread::sleep_for(chrono::milliseconds(150));
-        cout << "2. all number " <<endl;
+        cout << "2. all Symbol " <<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
         cout << "3. all uppercase letter"<<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
@@ -94,11 +97,30 @@ int returnSize()
         cin >> size ;
         if(size < 4 || size > 128 ) 
             cout <<"please enter a valid length of password."<<endl;
+        
     }
 
     //TODO  add print statement that print out the size that the user input
 
     return size ; 
+}
+
+string returnSameTypePassword ( const int& choice , const int& size) 
+{           
+    if (choice  == 1) 
+        return allNumberPassword(size);
+    
+    else if (choice == 2) 
+        return allSymbolPassword(size) ;
+
+    else if (choice == 3) 
+        return allUppercasePassword(size) ;
+    
+    else if (choice == 4) 
+        return allLowercasePassword(size) ;
+
+
+    return  "N/A";
 
 }
 
