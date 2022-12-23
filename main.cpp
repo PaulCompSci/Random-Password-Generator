@@ -11,15 +11,18 @@ using namespace std;
 
 int main() 
 {
-    for(int i =  4 ; i<= 128 ; i++)
+    srand(time(0)) ; 
+    // srand(time(0)) ;
+    // type_text("welcome to random password generator");
+    // cout <<endl; 
+    // int size = returnSize()  ;
+    // int choice = returnChoice() ; 
+    for(int i = 0 ; i < 1000 ; i++ )
     {
-        for(int j = 1 ; j<= 4 ; j++)
-        {
-            cout << returnSameTypePassword(j , i) <<endl;
-        }
-     cout <<endl <<endl; 
+        cout << returnTwoTypePassword ( 10 , 3 , 6) <<endl; 
     
     }
+    
     
 
     return 0 ;

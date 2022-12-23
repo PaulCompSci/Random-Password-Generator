@@ -96,12 +96,10 @@ int returnSize()
         cout << "please enter the desire length of password (minimum : 4, maximum : 128) :  " ;
         cin >> size ;
         if(size < 4 || size > 128 ) 
-            cout <<"please enter a valid length of password."<<endl;
-        
+            cout <<"please enter a valid length of password."<<endl;    
     }
 
     //TODO  add print statement that print out the size that the user input
-
     return size ; 
 }
 
@@ -116,12 +114,27 @@ string returnSameTypePassword ( const int& choice , const int& size)
     else if (choice == 3) 
         return allUppercasePassword(size) ;
     
-    else if (choice == 4) 
+    else  
         return allLowercasePassword(size) ;
 
 
-    return  "N/A";
 
+}
+
+string returnTwoTypePassword ( const int& choice , const int& numberOfType1 , const int& numberOfType2) 
+{           
+    if (choice == 5) 
+        return numberAndLowercasePassword(numberOfType1 , numberOfType2);
+    else if ( choice == 6) 
+        return numberAndSymbolPassword(numberOfType1 , numberOfType2);
+    else if (choice == 7) 
+        return numberAndUppercasePassword(numberOfType1 , numberOfType2);
+    else if (choice == 8 ) 
+        return lowercaseAndSymbolPassword(numberOfType1 , numberOfType2);
+    else if ( choice == 9 ) 
+        return uppercaseAndSymbolPassword(numberOfType1 , numberOfType2);
+    else    
+        return lowercaseAndUppercasePassword(numberOfType1 , numberOfType2);
 }
 
 

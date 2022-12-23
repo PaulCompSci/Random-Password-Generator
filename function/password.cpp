@@ -143,7 +143,7 @@ string uppercaseAndSymbolPassword(const int& numberOfUppercase , const int& numb
 
 }
 
-string lowercaesAndUppercasePassword (const int& numberOfLowercase , const int& numberOfUppercase) 
+string lowercaseAndUppercasePassword (const int& numberOfLowercase , const int& numberOfUppercase) 
 {
     string password = "";
     for(int i = 0 ; i < numberOfLowercase ; i++)
