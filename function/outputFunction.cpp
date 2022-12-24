@@ -17,10 +17,8 @@ void type_text(const std::string& text)
         std::cout << text[i] << std::flush;
 
         // sleep 60 milliseconds
-        std::this_thread::sleep_for(std::chrono::milliseconds(60));
+        std::this_thread::sleep_for(std::chrono::milliseconds(40));
     }
-
-    
 }
 
 
@@ -36,6 +34,8 @@ int returnChoice ()
     {
         type_text("below is a list of password combination available ") ;
         cout <<endl;
+        cout << "ID combination " <<endl;
+        cout << "== ==============="<<endl;
         cout << "1. all number"<<endl; 
         this_thread::sleep_for(chrono::milliseconds(150));
         cout << "2. all Symbol " <<endl;
@@ -71,19 +71,18 @@ int returnChoice ()
         this_thread::sleep_for(chrono::milliseconds(150)); 
 
         cout <<endl; 
-        cout <<"Please enter the number of the password combination that you want : ";
+        cout <<"Enter the ID of the password combination : ";
         cin >> choice ;
 
         if ( choice <= 0 || choice >15 )   
         {    
-            cout << "you entered a invalid number, please enter a number between 1 to 15"<<endl; 
+            cout << "you entered a invalid number, please enter a integer value between 1 to 15"<<endl; 
             this_thread::sleep_for(chrono::milliseconds(0));
             cout <<endl <<endl; 
         }
     }
- 
-
-    //TODO  add switch statement that print out the user choice 
+    cout <<endl; 
+    cout << "combination of password you chosen : " << choice << endl; 
     return choice ;
 
 }
@@ -92,15 +91,27 @@ int returnSize()
 {
     //determine the length of the password 
     int size = 0 ;
+
+
     while(size < 4  || size >128)
     {
-        cout << "please enter the desire length of password (minimum : 4, maximum : 128) :  " ;
+        type_text("Enter the desire length of password (minimum : 4, maximum : 128)");
+        cout <<endl; 
+        type_text("weak password length  : 4 to 7 ") ;
+        cout <<endl;
+
+        type_text("strong password length : 8 to 128") ;
+        cout <<endl; 
+        cout << "> " ;
         cin >> size ;
+
+
         if(size < 4 || size > 128 ) 
             cout <<"please enter a valid length of password."<<endl;    
     }
+    cout <<endl; 
+    cout <<"length of Password you choosen : " << size <<endl; 
 
-    //TODO  add print statement that print out the size that the user input
     return size ; 
 }
 

@@ -41,10 +41,12 @@ int main()
         {
             while ( total < 4 || total > 128)
             {
-                cout <<"please enter the number of Number that you prefer in your password : ";
+                type_text("please enter the number of \"Number\" that you prefer in your password : ") ;
                 cin>> numberOfFirstType;
-                cout <<"please enter the number of lowercase letter that you prefer in your password : ";
+
+                type_text("please enter the number of lowercase letter that you prefer in your password : ") ;
                 cin >> numberOfSecondType ; 
+
                 total = numberOfFirstType + numberOfSecondType ; 
                 if (total != size)
                 {
@@ -59,10 +61,12 @@ int main()
         {
             while (total < 4 || total > 128) 
             {
-                cout <<"please enter the number of Number that you prefer in your password: " ;  
+               type_text("please enter the number of Number that you prefer in your password: " ) ;
                 cin >> numberOfFirstType ; 
-                cout << "please enter the number of Symbol that you prefer in your password:  "; 
+
+                type_text("please enter the number of Symbol that you prefer in your password:  ") ;
                 cin >> numberOfSecondType ; 
+
                 total = numberOfFirstType + numberOfSecondType ; 
                 if (total != size)
                 {
@@ -77,9 +81,9 @@ int main()
         {    
             while(total < 4  || total > 128)
             {
-                cout <<"please enter the number of Number that you prefer in your password: " ;
+                type_text("please enter the number of Number that you prefer in your password: ") ;
                 cin >> numberOfFirstType ;
-                cout << "please enter the number of Uppercase letter that you prefer in your password: " ; 
+                type_text("please enter the number of Uppercase letter that you prefer in your password: ") ; 
                 cin>> numberOfSecondType ;
                 total = numberOfFirstType + numberOfSecondType ; 
                 if (total != size)
@@ -95,9 +99,9 @@ int main()
         else if (choice == 8) 
         {    while(total < 4  || total > 128)
             {
-                cout <<"please enter the number of lowercase letter  that you prefer in your password: " ;
+                type_text("please enter the number of lowercase letter  that you prefer in your password: ") ;
                 cin >> numberOfFirstType ;
-                cout << "please enter the number of symbol that you prefer in your password: " ;
+                type_text("please enter the number of symbol that you prefer in your password: ");
                 cin>> numberOfSecondType ;
                 total = numberOfFirstType + numberOfSecondType ; 
                 if (total != size)
@@ -112,9 +116,9 @@ int main()
         else if (choice == 9) 
         {    while(total < 4  || total > 128)
             {
-                cout <<"please enter the number of Uppercase letter  that you prefer in your password: " ; 
+                type_text("please enter the number of Uppercase letter  that you prefer in your password: ") ;
                 cin >> numberOfFirstType ;
-                cout << "please enter the number of symbol that you prefer in your password: ";
+                type_text("please enter the number of symbol that you prefer in your password: ") ; 
                 cin>> numberOfSecondType ;
                 total = numberOfFirstType + numberOfSecondType ; 
                 if (total != size)
@@ -129,9 +133,9 @@ int main()
         else if (choice == 10) 
         {    while(total < 4  || total > 128)
             {
-                cout <<"please enter the number of lowercase letter  that you prefer in your password: " ;
+                type_text("please enter the number of lowercase letter  that you prefer in your password: " ); 
                 cin >> numberOfFirstType ;
-                cout << "please enter the number of uppercase letter  that you prefer in your password: " ; 
+                type_text("please enter the number of uppercase letter  that you prefer in your password: ") ; 
                 cin>> numberOfSecondType ;
                 total = numberOfFirstType + numberOfSecondType ; 
                 if (total != size)
@@ -144,7 +148,7 @@ int main()
         }
 
         cout <<endl; 
-        cout << "the password : " << returnTwoTypePassword(choice, numberOfFirstType , numberOfSecondType)  <<endl; 
+        cout << "password generated :  " << returnTwoTypePassword(choice, numberOfFirstType , numberOfSecondType)  <<endl; 
         
     }
 
@@ -159,11 +163,11 @@ int main()
         {
             while (total < 4 || total > 128)
             {
-                cout <<"Please enter the number of Number that you prefer in your password: " ;
+                type_text("Please enter the number of Number that you prefer in your password: " ) ;
                 cin >> numberOfType1; 
-                cout <<"Please enter the number of Lowercase letter that you prefer in your password: ";
+                type_text("Please enter the number of Lowercase letter that you prefer in your password: ");
                 cin >> numberOfType2;
-                cout <<"Please enter the number of Uppercase letter that you prefer in your password : " ;
+                type_text("Please enter the number of Uppercase letter that you prefer in your password : ") ;
                 cin >> numberOfType3;  
                 total = numberOfType1 + numberOfType2  + numberOfType3;
                 if (total != size) 
@@ -180,11 +184,11 @@ int main()
         { 
              while (total < 4 || total > 128)
             {
-                cout <<"Please enter the number of Lowercase letter that you prefer in your password: ";
+                type_text("Please enter the number of Lowercase letter that you prefer in your password: ") ; 
                 cin >> numberOfType1;
-                cout <<"Please enter the number of Uppercase letter that you prefer in your password : " ;
+                type_text("Please enter the number of Uppercase letter that you prefer in your password : ") ;
                 cin >> numberOfType2;  
-                cout << "Please enter the number of Symbol that you prefer in your password : " ; 
+                type_text("Please enter the number of Symbol that you prefer in your password : ") ;
                 cin >> numberOfType3;
                 total = numberOfType1 + numberOfType2 + numberOfType3;
                 if (total != size) 
@@ -200,11 +204,11 @@ int main()
         {  
             while (total < 4 || total > 128)
             {
-                cout <<"Please enter the number of Number that you prefer in your password: " ;
+                type_text("Please enter the number of Number that you prefer in your password: ");
                 cin >> numberOfType1; 
-                cout <<"Please enter the number of Lowercase letter that you prefer in your password : " ;
+                type_text("Please enter the number of Lowercase letter that you prefer in your password : ") ;
                 cin >> numberOfType2;  
-                cout << "Please enter the number of Symbol that you prefer in your password : " ; 
+                type_text("Please enter the number of Symbol that you prefer in your password : ") ; 
                 cin >> numberOfType3;
                 total = numberOfType1 + numberOfType2 + numberOfType3;
                 if (total != size) 
@@ -219,11 +223,11 @@ int main()
         {  
             while (total < 4 || total > 128)
             {
-                cout <<"Please enter the number of Number that you prefer in your password: " ;
+                type_text("Please enter the number of Number that you prefer in your password: " ) ; 
                 cin >> numberOfType1; 
-                cout <<"Please enter the number of Uppercase letter that you prefer in your password : " ;
+                type_text("Please enter the number of Uppercase letter that you prefer in your password : ")  ;
                 cin >> numberOfType2;  
-                cout << "Please enter the number of Symbol that you prefer in your password : " ; 
+                type_text("Please enter the number of Symbol that you prefer in your password : ");
                 cin >> numberOfType3;
                 total = numberOfType1 + numberOfType2 + numberOfType3;
                 if (total != size) 
@@ -236,7 +240,7 @@ int main()
         }
 
         cout <<endl; 
-        cout << "the password : " << returnThreeTypePassword(choice, numberOfType1, numberOfType2 , numberOfType3)  <<endl; 
+        cout << "password generated : " << returnThreeTypePassword(choice, numberOfType1, numberOfType2 , numberOfType3)  <<endl; 
 
     }
 
@@ -250,13 +254,13 @@ int main()
         int total = 0 ; 
         while ( total < 4 || total > 128)
         {
-            cout <<"Please enther the number of Number that you prefer in your password : " ;
+            type_text("Please enther the number of Number that you prefer in your password : " ) ; 
             cin >> numberOfType1 ;
-            cout <<"Please enter the number of Lowercase letter that you prefer in your password : " ;
+            type_text("Please enter the number of Lowercase letter that you prefer in your password : ") ;
             cin >> numberOfType2 ;
-            cout <<"Please enter the number of Uppercase letter that you prefer in your password : " ;
+            type_text("Please enter the number of Uppercase letter that you prefer in your password : ") ; 
             cin >> numberOfType3 ; 
-            cout <<"Please enter the number of Symbol that you prefer in your password : " ;
+            type_text("Please enter the number of Symbol that you prefer in your password : ")  ; 
             cin >> numberOfType4 ;
             total  = numberOfType1 + numberOfType2 + numberOfType3 + numberOfType4 ; 
             if (total != size) 
@@ -267,9 +271,10 @@ int main()
             } 
         }
         cout <<endl; 
-        cout << "the password : " << returnFourTypePassword(numberOfType1 , numberOfType2 , numberOfType3 , numberOfType4)  <<endl; 
+        cout << "password generated  : " << returnFourTypePassword(numberOfType1 , numberOfType2 , numberOfType3 , numberOfType4)  <<endl; 
     }
 
+    cout <<endl; 
     cout <<"thank you for using this random password generator" <<endl; 
 
 
