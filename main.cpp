@@ -21,7 +21,7 @@ int main()
     int size = returnSize()  ;
     int choice = returnChoice() ;
 
-    cout <<endl <<endl;
+    cout <<endl ;
 
     //password consist of one type 
     if ( choice  >= 1 && choice <= 4) 
@@ -41,7 +41,7 @@ int main()
         {
             while ( total < 4 || total > 128)
             {
-                type_text("please enter the number of \"Number\" that you prefer in your password : ") ;
+                type_text("please enter the number of digit that you prefer in your password : ") ;
                 cin>> numberOfFirstType;
 
                 type_text("please enter the number of lowercase letter that you prefer in your password : ") ;
@@ -61,7 +61,7 @@ int main()
         {
             while (total < 4 || total > 128) 
             {
-               type_text("please enter the number of Number that you prefer in your password: " ) ;
+               type_text("please enter the number of digit that you prefer in your password: " ) ;
                 cin >> numberOfFirstType ; 
 
                 type_text("please enter the number of Symbol that you prefer in your password:  ") ;
@@ -81,7 +81,7 @@ int main()
         {    
             while(total < 4  || total > 128)
             {
-                type_text("please enter the number of Number that you prefer in your password: ") ;
+                type_text("please enter the number of digit that you prefer in your password: ") ;
                 cin >> numberOfFirstType ;
                 type_text("please enter the number of Uppercase letter that you prefer in your password: ") ; 
                 cin>> numberOfSecondType ;
@@ -163,7 +163,7 @@ int main()
         {
             while (total < 4 || total > 128)
             {
-                type_text("Please enter the number of Number that you prefer in your password: " ) ;
+                type_text("Please enter the number of digit that you prefer in your password: " ) ;
                 cin >> numberOfType1; 
                 type_text("Please enter the number of Lowercase letter that you prefer in your password: ");
                 cin >> numberOfType2;
@@ -204,7 +204,7 @@ int main()
         {  
             while (total < 4 || total > 128)
             {
-                type_text("Please enter the number of Number that you prefer in your password: ");
+                type_text("Please enter the number of digit that you prefer in your password: ");
                 cin >> numberOfType1; 
                 type_text("Please enter the number of Lowercase letter that you prefer in your password : ") ;
                 cin >> numberOfType2;  
@@ -223,7 +223,7 @@ int main()
         {  
             while (total < 4 || total > 128)
             {
-                type_text("Please enter the number of Number that you prefer in your password: " ) ; 
+                type_text("Please enter the number of digit that you prefer in your password: " ) ; 
                 cin >> numberOfType1; 
                 type_text("Please enter the number of Uppercase letter that you prefer in your password : ")  ;
                 cin >> numberOfType2;  
@@ -254,7 +254,7 @@ int main()
         int total = 0 ; 
         while ( total < 4 || total > 128)
         {
-            type_text("Please enther the number of Number that you prefer in your password : " ) ; 
+            type_text("Please enter the number of digit that you prefer in your password : " ) ; 
             cin >> numberOfType1 ;
             type_text("Please enter the number of Lowercase letter that you prefer in your password : ") ;
             cin >> numberOfType2 ;
@@ -273,9 +273,12 @@ int main()
         cout <<endl; 
         cout << "password generated  : " << returnFourTypePassword(numberOfType1 , numberOfType2 , numberOfType3 , numberOfType4)  <<endl; 
     }
-
     cout <<endl; 
-    cout <<"thank you for using this random password generator" <<endl; 
+    cout <<"thank you for using this program" <<endl;   
+    cout << "exiting program.... " <<endl; 
+    type_text(".........................................................................................................................................................................") ;
+    cout <<endl;
+    cout << "done! , see you next time"<<endl; 
 
 
         return 0 ;

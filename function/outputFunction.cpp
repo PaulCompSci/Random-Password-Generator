@@ -36,7 +36,7 @@ int returnChoice ()
         cout <<endl;
         cout << "ID combination " <<endl;
         cout << "== ==============="<<endl;
-        cout << "1. all number"<<endl; 
+        cout << "1. all digit"<<endl; 
         this_thread::sleep_for(chrono::milliseconds(150));
         cout << "2. all Symbol " <<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
@@ -45,11 +45,11 @@ int returnChoice ()
         cout << "4. all lowercase letter"<<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
 
-        cout << "5. number and lowercase letter"<<endl;
+        cout << "5. digit and lowercase letter"<<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
-        cout << "6. number and symbol " <<endl; 
+        cout << "6. digit and symbol " <<endl; 
         this_thread::sleep_for(chrono::milliseconds(150));
-        cout << "7. number and uppercase letter"<<endl;
+        cout << "7. digit and uppercase letter"<<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
         cout << "8. lowercase letter and symbol"<<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
@@ -58,16 +58,16 @@ int returnChoice ()
         cout << "10. lowercase letter and uppercase letter"<<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
 
-        cout << "11. lowercase letter , uppercase letter and number "<<endl;
+        cout << "11. lowercase letter , uppercase letter and digit "<<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
         cout <<"12. lowercase letter , uppercase letter and symbol" <<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
-        cout << "13. number , lowercase letter , symbol"<<endl;
+        cout << "13. digit , lowercase letter , symbol"<<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
-        cout <<"14. number, uppercase letter , symbol" <<endl;
+        cout <<"14. digit, uppercase letter , symbol" <<endl;
         this_thread::sleep_for(chrono::milliseconds(150));
         
-        cout << "15. number , lowercase letter , uppercase letter , symbol"<<endl;
+        cout << "15. digit , lowercase letter , uppercase letter , symbol"<<endl;
         this_thread::sleep_for(chrono::milliseconds(150)); 
 
         cout <<endl; 
