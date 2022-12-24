@@ -22,5 +22,5 @@ g++ main.cpp function/random_char.cpp function/password.cpp function/outputFunct
 Want to know the strength of the password generated ? Check out [Password strength tester](https://www.passwordmonster.com) 
 
 
-## speciality between my project to other project
+## My project Vs Other Project
 my project allow user to have the freedom to fully customize the password they want
