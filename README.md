@@ -1,4 +1,4 @@
-# Random Password Generator C++
+# Password Generator C++
 using only C++ to generate password according to user choice 
 
 
@@ -21,3 +21,6 @@ g++ main.cpp function/random_char.cpp function/password.cpp function/outputFunct
  ## Additional resources
 Want to know the strength of the password generated ? Check out [Password strength tester](https://www.passwordmonster.com) 
 
+
+## speciality between my project to other project
+my project allow user to have the freedom to fully customize the password they want
