@@ -70,6 +70,7 @@ int returnChoice ()
         cout << "15. number , lowercase letter , uppercase letter , symbol"<<endl;
         this_thread::sleep_for(chrono::milliseconds(150)); 
 
+        cout <<endl; 
         cout <<"Please enter the number of the password combination that you want : ";
         cin >> choice ;
 

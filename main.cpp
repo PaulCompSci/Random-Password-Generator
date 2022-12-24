@@ -16,11 +16,17 @@ int main()
 
     type_text("welcome to random password generator");
     cout <<endl; 
+    cout <<endl; 
+
     int size = returnSize()  ;
-    int choice = returnChoice() ; 
+    int choice = returnChoice() ;
+
+    cout <<endl <<endl;
+
     //password consist of one type 
     if ( choice  >= 1 && choice <= 4) 
     {
+        cout <<endl;  
         cout <<"password generated : " << returnSameTypePassword(choice ,size)  << endl; 
     }
 
@@ -30,6 +36,7 @@ int main()
         int numberOfFirstType = 0 ; 
         int numberOfSecondType = 0 ;
         int total = 0 ; 
+
         if (choice  == 5) 
         {
             while ( total < 4 || total > 128)
@@ -43,6 +50,7 @@ int main()
                 {
                     cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
                     total = 0 ; 
+                    cout <<endl; 
                 }
             }
                
@@ -59,7 +67,8 @@ int main()
                 if (total != size)
                 {
                     cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ; 
+                    total = 0 ;
+                    cout <<endl;  
                 }
             }
         }
@@ -74,7 +83,12 @@ int main()
                 cin>> numberOfSecondType ;
                 total = numberOfFirstType + numberOfSecondType ; 
                 if (total != size)
-                        cout <<"the total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
+                {
+                    cout <<"the total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
+                    total  = 0 ; 
+                    cout <<endl; 
+                }
+                        
             }
         }
 
@@ -90,6 +104,7 @@ int main()
                 {
                     cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
                     total = 0 ; 
+                    cout <<endl; 
                 }
             }
         }
@@ -106,6 +121,7 @@ int main()
                 {
                     cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
                     total = 0 ; 
+                    cout <<endl; 
                 }
             }
         }
@@ -122,13 +138,17 @@ int main()
                 {
                     cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
                     total = 0 ; 
+                    cout <<endl; 
                 }
             }
         }
+
+        cout <<endl; 
         cout << "the password : " << returnTwoTypePassword(choice, numberOfFirstType , numberOfSecondType)  <<endl; 
         
     }
 
+    //password consist of three type 
     else if (choice >=  11 && choice <= 14) 
     {
         int numberOfType1 = 0 ;
@@ -150,6 +170,7 @@ int main()
                 {
                     cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
                     total = 0 ;   
+                    cout <<endl; 
                 }
             }
 
@@ -169,7 +190,8 @@ int main()
                 if (total != size) 
                 {
                     cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ;     
+                    total = 0 ;
+                    cout <<endl;      
                 }
             }
         }
@@ -188,7 +210,8 @@ int main()
                 if (total != size) 
                 {
                     cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ;      
+                    total = 0 ;  
+                    cout <<endl;     
                 }
             }
         }
@@ -205,16 +228,19 @@ int main()
                 total = numberOfType1 + numberOfType2 + numberOfType3;
                 if (total != size) 
                 {
-                        cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                        total = 0 ;  
-                        
+                    cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
+                    total = 0 ; 
+                    cout <<endl;      
                 }
             }
         }
 
+        cout <<endl; 
         cout << "the password : " << returnThreeTypePassword(choice, numberOfType1, numberOfType2 , numberOfType3)  <<endl; 
 
     }
+
+    //password consist of four type 
     else
     {
         int numberOfType1 = 0 ;
@@ -236,9 +262,11 @@ int main()
             if (total != size) 
             {
                 cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                total = 0 ;               
+                total = 0 ;
+                cout <<endl;               
             } 
         }
+        cout <<endl; 
         cout << "the password : " << returnFourTypePassword(numberOfType1 , numberOfType2 , numberOfType3 , numberOfType4)  <<endl; 
     }
 
