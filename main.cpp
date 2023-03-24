@@ -1,285 +1,260 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include "function/outputFunction.hpp"
+#include "function/password.hpp"
+using std::cout;
+using std::cin;
+using std::endl;
 
-# include <iostream> 
-#include<chrono>
-#include<thread>
-# include "function/outputFunction.h"
-# include "function/password.h"
+int main(int argc, char* argv[]) {
 
-using namespace std;
+	outputPrint print;
+	std::map<int, std::string> choiceMap = {
+		{1, "All numbers"},
+		{2, "All symbols"},
+		{3, "All uppercase letters"},
+		{4, "All lowercase letters"},
+		{5, "Numbers and lowecase letters"},
+		{6, "Numbers and symbols"},
+		{7, "Numbers and uppercase letters"},
+		{8, "Lowercase letters and uppercase letters"},
+		{9, "Uppercase letters and symbols"},
+		{10, "Lowercase letters and uppercase letters"},
+		{11, "Lowercase letters, uppercase letters and numbers"},
+		{12, "Lowercase letters, uppercase letters and symbols"},
+		{13, "Numbers, lowercase letters, symbols"},
+		{14, "Numbers, uppercase letters, symbols"},
+		{15, "Numbers, lowercase letters, uppercase letters, symbols"}
+	};
 
+	print.typewriter("Enter the desired length of password (minimum: 8, maximum: 128)");
+	print.typewriter("Decent password length: 8 to 14");
+	print.typewriter("Strong password length: 14 to 128");
+	int length, half = length / 2, third = length / 3;
+	std::cout << "> "; std::cin >> length;
+	print.newline();
 
+	if (length < 8 || length > 128) {
+		std::cout << "Please enter a valid length of password." << std::endl;
+	}
 
+	else {
+		std::cout << std::endl << "The length of password you chose is: " << length << " characters." << std::endl;
 
-int main() 
-{
-    srand(time(0)) ; 
+		int choice;
 
-    type_text("welcome to random password generator");
-    cout <<endl; 
-    cout <<endl; 
+		print.typewriter("Below is a list of password combinations available:");
+		print.newline();
 
-    int size = returnSize()  ;
-    int choice = returnChoice() ;
+		print.sleep_cout("ID combinations:", 50);
+		print.sleep_cout("1. All numbers", 150);
+		print.sleep_cout("2. All symbols", 150);
+		print.sleep_cout("3. All uppercase letters", 150);
+		print.sleep_cout("4. All lowercase letters", 150);
+		print.sleep_cout("5. Numbers and lowercase letters", 150);
+		print.sleep_cout("6. Numbers and symbols", 150);
+		print.sleep_cout("7. Numbers and uppercase letters", 150);
+		print.sleep_cout("8. Lowercase letters and symbols", 150);
+		print.sleep_cout("9. Uppercase letters and symbols", 150);
+		print.sleep_cout("10. Lowercase letters and uppercase letters", 150);
+		print.sleep_cout("11. Lowercase letters, uppercase letters and numbers", 150);
+		print.sleep_cout("12. Lowercase letters, uppercase letters and symbols", 150);
+		print.sleep_cout("13. Numbers, lowercase letters, symbols", 150);
+		print.sleep_cout("14. Numbers, uppercase letters, symbols", 150);
+		print.sleep_cout("15. Numbers, lowercase letters, uppercase letters, symbols", 150);
+		print.newline();
 
-    cout <<endl ;
+		print.typewriter("Enter the ID of the password combination: ");
+		std::cout << "> "; std::cin >> choice;
 
-    //password consist of one type 
-    if ( choice  >= 1 && choice <= 4) 
-    {
-        cout <<endl;  
-        cout <<"password generated : " << returnSameTypePassword(choice ,size)  << endl; 
-    }
+		if (choice <= 0 || choice > 15) {
+			throw std::runtime_error("Invalid password type choice.");
+			return 1;
+		}
 
-    //password consist of two type 
-    else if ( choice >= 5 && choice <= 10) 
-    {
-        int numberOfFirstType = 0 ; 
-        int numberOfSecondType = 0 ;
-        int total = 0 ; 
+		else {
+			int numberCount, lowercaseCount, uppercaseCount, symbolCount;
+			print.newline();
+			const std::string chosenOutput = "Combination of password you chose: " + std::to_string(choice) + " - " + choiceMap[choice];
+			print.typewriter(chosenOutput);
 
-        if (choice  == 5) 
-        {
-            while ( total < 4 || total > 128)
-            {
-                type_text("please enter the number of digit that you prefer in your password : ") ;
-                cin>> numberOfFirstType;
+			switch (choice) {
+				case 1:
+					print.typewriter(allNumberPassword(length));
+					break;
 
-                type_text("please enter the number of lowercase letter that you prefer in your password : ") ;
-                cin >> numberOfSecondType ; 
+				case 2:
+					print.typewriter(allSymbolPassword(length));
+					break;
 
-                total = numberOfFirstType + numberOfSecondType ; 
-                if (total != size)
-                {
-                    cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ; 
-                    cout <<endl; 
-                }
-            }
-               
-        }
-        else if  (choice == 6) 
-        {
-            while (total < 4 || total > 128) 
-            {
-               type_text("please enter the number of digit that you prefer in your password: " ) ;
-                cin >> numberOfFirstType ; 
+				case 3:
+					print.typewriter(allUppercasePassword(length));
+					break;
 
-                type_text("please enter the number of Symbol that you prefer in your password:  ") ;
-                cin >> numberOfSecondType ; 
+				case 4:
+					print.typewriter(allLowercasePassword(length));
+					break;
 
-                total = numberOfFirstType + numberOfSecondType ; 
-                if (total != size)
-                {
-                    cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ;
-                    cout <<endl;  
-                }
-            }
-        }
+				case 5:
+					print.typewriter("How many numbers do you want the password to have?");
+					std::cout << "> "; std::cin >> numberCount;
+					print.typewriter("How many lowercase characters do you want the password to have?");
+					std::cout << "> "; std::cin >> lowercaseCount;
+					if ( (numberCount + lowercaseCount) != length ) {
+						numberCount = half;
+						lowercaseCount = half;
+					}
+					print.typewriter(numberAndLowercasePassword(numberCount, lowercaseCount));
+					break;
 
-        else if (choice == 7) 
-        {    
-            while(total < 4  || total > 128)
-            {
-                type_text("please enter the number of digit that you prefer in your password: ") ;
-                cin >> numberOfFirstType ;
-                type_text("please enter the number of Uppercase letter that you prefer in your password: ") ; 
-                cin>> numberOfSecondType ;
-                total = numberOfFirstType + numberOfSecondType ; 
-                if (total != size)
-                {
-                    cout <<"the total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total  = 0 ; 
-                    cout <<endl; 
-                }
-                        
-            }
-        }
+				case 6
+					print.typewriter("How many numbers do you want the password to have?");
+					std::cout << "> "; std::cin >> numberCount;
+					print.typewriter("How many special characters do you want the password to have?");
+					std::cout << "> "; std::cin >> symbolCount;
+					if ( (numberCount + symbolCount) != length ) {
+						numberCount = half;
+						symbolCount = half;
+					}
 
-        else if (choice == 8) 
-        {    while(total < 4  || total > 128)
-            {
-                type_text("please enter the number of lowercase letter  that you prefer in your password: ") ;
-                cin >> numberOfFirstType ;
-                type_text("please enter the number of symbol that you prefer in your password: ");
-                cin>> numberOfSecondType ;
-                total = numberOfFirstType + numberOfSecondType ; 
-                if (total != size)
-                {
-                    cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ; 
-                    cout <<endl; 
-                }
-            }
-        }
+					print.typewriter(numberAndSymbolPassword(numberCount, symbolCount));
+					break;
 
-        else if (choice == 9) 
-        {    while(total < 4  || total > 128)
-            {
-                type_text("please enter the number of Uppercase letter  that you prefer in your password: ") ;
-                cin >> numberOfFirstType ;
-                type_text("please enter the number of symbol that you prefer in your password: ") ; 
-                cin>> numberOfSecondType ;
-                total = numberOfFirstType + numberOfSecondType ; 
-                if (total != size)
-                {
-                    cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ; 
-                    cout <<endl; 
-                }
-            }
-        }
+				case 7: // num & upp
+					print.typewriter("How many numbers do you want the password to have?");
+					std::cout << "> "; std::cin >> numberCount;
+					print.typewriter("How many special characters do you want the password to have?");
+					std::cout << "> "; std::cin >> uppercaseCount;
+					if ( (numberCount + uppercaseCount) != length ) {
+						numberCount = half;
+						uppercaseCount = half;
+					}
+					print.typewriter(numberAndUppercasePassword((numberCount), uppercaseCount));
+					break;
 
-        else if (choice == 10) 
-        {    while(total < 4  || total > 128)
-            {
-                type_text("please enter the number of lowercase letter  that you prefer in your password: " ); 
-                cin >> numberOfFirstType ;
-                type_text("please enter the number of uppercase letter  that you prefer in your password: ") ; 
-                cin>> numberOfSecondType ;
-                total = numberOfFirstType + numberOfSecondType ; 
-                if (total != size)
-                {
-                    cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ; 
-                    cout <<endl; 
-                }
-            }
-        }
+				case 8: // low & app
+					print.typewriter("How many lowercase characters do you want the password to have?");
+					std::cout << "> "; std::cin >> lowercaseCount;
+					print.typewriter("How many special characters do you want the password to have?");
+					std::cout << "> "; std::cin >> symbolCount;
+					if ( (lowercaseCount + symbolCount) != length ) {
+						lowercaseCount = half;
+						symbolCount = half;
+					}
+					print.typewriter(lowercaseAndUppercasePassword(lowercaseCount, symbolCount));
+					break;
 
-        cout <<endl; 
-        cout << "password generated :  " << returnTwoTypePassword(choice, numberOfFirstType , numberOfSecondType)  <<endl; 
-        
-    }
+				case 9:
+					print.typewriter("How many uppercase characters do you want the password to have?");
+					std::cout << "> "; std::cin >> uppercaseCount;
+					print.typewriter("How many special characters do you want the password to have?");
+					std::cout << "> "; std::cin >> symbolCount;
+					if ( (uppercaseCount + symbolCount) != length ) {
+						uppercaseCount = half;
+						symbolCount = half;
+					}
+					print.typewriter(uppercaseAndSymbolPassword(lowercaseCount, symbolCount));
+					break;
 
-    //password consist of three type 
-    else if (choice >=  11 && choice <= 14) 
-    {
-        int numberOfType1 = 0 ;
-        int numberOfType2 = 0 ;
-        int numberOfType3 = 0 ; 
-        int total = 0 ;
-        if (choice == 11) 
-        {
-            while (total < 4 || total > 128)
-            {
-                type_text("Please enter the number of digit that you prefer in your password: " ) ;
-                cin >> numberOfType1; 
-                type_text("Please enter the number of Lowercase letter that you prefer in your password: ");
-                cin >> numberOfType2;
-                type_text("Please enter the number of Uppercase letter that you prefer in your password : ") ;
-                cin >> numberOfType3;  
-                total = numberOfType1 + numberOfType2  + numberOfType3;
-                if (total != size) 
-                {
-                    cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ;   
-                    cout <<endl; 
-                }
-            }
+				case 10: //Lowercase letters and uppercase letters
+					print.typewriter("How many uppercase characters do you want the password to have?");
+					std::cout << "> "; std::cin >> lowercaseCount;
+					print.typewriter("How many uppercase characters do you want the password to have?");
+					std::cout << "> "; std::cin >> uppercaseCount;
+					if ( (lowercaseCount + uppercaseCount) != length ) {
+						lowercaseCount = half;
+						uppercaseCount = half;
+					}
+					print.typewriter(lowercaseAndUppercasePassword(lowercaseCount, uppercaseCount));
+					break;
 
-        }
+				case 11: //Lowercase letters, uppercase letters and numbers
+					print.typewriter("How many lower characters do you want the password to have?");
+					std::cout << "> "; std::cin >> lowercaseCount;
+					print.typewriter("How many uppercase characters do you want the password to have?");
+					std::cout << "> "; std::cin >> uppercaseCount;
+					print.typewriter("How many numbers do you want the password to have?");
+					std::cout << "> "; std::cin >> numberCount;
+					if ( (lowercaseCount + uppercaseCount + numberCount) != length ) {
+						lowercaseCount = third;
+						uppercaseCount = third;
+						numberCount = third;
+					}
+					print.typewriter(lowercaseUppercaseNumberPassword(lowercaseCount, uppercaseCount, numberCount));
+					break;
 
-        else if (choice == 12) 
-        { 
-             while (total < 4 || total > 128)
-            {
-                type_text("Please enter the number of Lowercase letter that you prefer in your password: ") ; 
-                cin >> numberOfType1;
-                type_text("Please enter the number of Uppercase letter that you prefer in your password : ") ;
-                cin >> numberOfType2;  
-                type_text("Please enter the number of Symbol that you prefer in your password : ") ;
-                cin >> numberOfType3;
-                total = numberOfType1 + numberOfType2 + numberOfType3;
-                if (total != size) 
-                {
-                    cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ;
-                    cout <<endl;      
-                }
-            }
-        }
+				case 12: //Lowercase letters, uppercase letters and symbols
+					print.typewriter("How many lower characters do you want the password to have?");
+					std::cout << "> "; std::cin >> lowercaseCount;
+					print.typewriter("How many uppercase characters do you want the password to have?");
+					std::cout << "> "; std::cin >> uppercaseCount;
+					print.typewriter("How many special characters do you want the password to have?");
+					std::cout << "> "; std::cin >> symbolCount;
+					if ( (lowercaseCount + uppercaseCount + symbolCount) != length ) {
+						lowercaseCount = third;
+						uppercaseCount = third;
+						symbolCount = third;
+					}
+					print.typewriter(lowercaseUppercaseSymbolPassword(lowercaseCount, uppercaseCount, symbolCount));
+					break;
 
-        else if (choice == 13) 
-        {  
-            while (total < 4 || total > 128)
-            {
-                type_text("Please enter the number of digit that you prefer in your password: ");
-                cin >> numberOfType1; 
-                type_text("Please enter the number of Lowercase letter that you prefer in your password : ") ;
-                cin >> numberOfType2;  
-                type_text("Please enter the number of Symbol that you prefer in your password : ") ; 
-                cin >> numberOfType3;
-                total = numberOfType1 + numberOfType2 + numberOfType3;
-                if (total != size) 
-                {
-                    cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ;  
-                    cout <<endl;     
-                }
-            }
-        }
-        else 
-        {  
-            while (total < 4 || total > 128)
-            {
-                type_text("Please enter the number of digit that you prefer in your password: " ) ; 
-                cin >> numberOfType1; 
-                type_text("Please enter the number of Uppercase letter that you prefer in your password : ")  ;
-                cin >> numberOfType2;  
-                type_text("Please enter the number of Symbol that you prefer in your password : ");
-                cin >> numberOfType3;
-                total = numberOfType1 + numberOfType2 + numberOfType3;
-                if (total != size) 
-                {
-                    cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                    total = 0 ; 
-                    cout <<endl;      
-                }
-            }
-        }
+				case 13: //Numbers, lowercase letters, symbols
+					print.typewriter("How many numbers do you want the password to have?");
+					std::cout << "> "; std::cin >> numberCount;
+					print.typewriter("How many lowercase characters do you want the password to have?");
+					std::cout << "> "; std::cin >> lowercaseCount;
+					print.typewriter("How many special characters do you want the password to have?");
+					std::cout << "> "; std::cin >> symbolCount;
+					if ( (numberCount + lowercaseCount + symbolCount) != length ) {
+						numberCount = third;
+						lowercaseCount = third;
+						symbolCount = third;
+					}
+					print.typewriter(numberLowercaseSymbolPassword(numberCount, lowercaseCount, symbolCount));
+					break;
 
-        cout <<endl; 
-        cout << "password generated : " << returnThreeTypePassword(choice, numberOfType1, numberOfType2 , numberOfType3)  <<endl; 
+				case 14: //Numbers, uppercase letters, symbols
+					print.typewriter("How many numbers do you want the password to have?");
+					std::cout << "> "; std::cin >> numberCount;
+					print.typewriter("How many uppercase characters do you want the password to have?");
+					std::cout << "> "; std::cin >> uppercaseCount;
+					print.typewriter("How many special characters do you want the password to have?");
+					std::cout << "> "; std::cin >> symbolCount;
+					if ( (numberCount + uppercaseCount + symbolCount) != length ) {
+						lowercaseCount = third;
+						uppercaseCount = third;
+						symbolCount = third;
+					}
+					print.typewriter(numberUppercaseSymbolPassword(numberCount, lowercaseCount, symbolCount));
+					break;
 
-    }
+				case 15: //Numbers, lowercase letters, uppercase letters, symbols
+					print.typewriter("How many numbers do you want the password to have?");
+					std::cout << "> "; std::cin >> numberCount;
+					print.typewriter("How many lowercase characters do you want the password to have?");
+					std::cout << "> "; std::cin >> lowercaseCount;
+					print.typewriter("How many special characters do you want the password to have?");
+					std::cout << "> "; std::cin >> uppercaseCount;
+					print.typewriter("How many special characters do you want the password to have?");
+					std::cout << "> "; std::cin >> symbolCount;
+					if ( (numberCount + lowercaseCount + uppercaseCount + symbolCount) != length ) {
+						numberCount = length / 4;
+						lowercaseCount = length / 4;
+						uppercaseCount = length / 4;
+						symbolCount = length / 4;
+					}
+					print.typewriter(numberLowercaseUppercaseSymbolPassword(numberCount, lowercaseCount, uppercaseCount, symbolCount));
+					break;
 
-    //password consist of four type 
-    else
-    {
-        int numberOfType1 = 0 ;
-        int numberOfType2 = 0 ;
-        int numberOfType3 = 0 ; 
-        int numberOfType4 = 0 ; 
-        int total = 0 ; 
-        while ( total < 4 || total > 128)
-        {
-            type_text("Please enter the number of digit that you prefer in your password : " ) ; 
-            cin >> numberOfType1 ;
-            type_text("Please enter the number of Lowercase letter that you prefer in your password : ") ;
-            cin >> numberOfType2 ;
-            type_text("Please enter the number of Uppercase letter that you prefer in your password : ") ; 
-            cin >> numberOfType3 ; 
-            type_text("Please enter the number of Symbol that you prefer in your password : ")  ; 
-            cin >> numberOfType4 ;
-            total  = numberOfType1 + numberOfType2 + numberOfType3 + numberOfType4 ; 
-            if (total != size) 
-            {
-                cout <<"total amount that you enter does not match with the length of the password ,  please reenter..." <<endl;
-                total = 0 ;
-                cout <<endl;               
-            } 
-        }
-        cout <<endl; 
-        cout << "password generated  : " << returnFourTypePassword(numberOfType1 , numberOfType2 , numberOfType3 , numberOfType4)  <<endl; 
-    }
-    cout <<endl; 
-    cout <<"thank you for using this program" <<endl;   
-    cout << "exiting program.... " <<endl; 
-    type_text(".........................................................................................................................................................................") ;
-    cout <<endl;
-    cout << "done! , see you next time"<<endl; 
+					default:
+						throw std::runtime_error("Error.");
+						break;
+			}
 
+		}
 
-        return 0 ;
+	}
+
+	return 0;
 }

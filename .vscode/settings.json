@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "iostream": "cpp",
-        "iosfwd": "cpp",
-        "random": "cpp",
-        "__threading_support": "cpp",
-        "chrono": "cpp"
-    }
-}
