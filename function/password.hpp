@@ -1,18 +1,10 @@
 #pragma once
-
-/*
-	This header file contains functions for generating passwords of various types, including passwords with all characters
-	the same, passwords with different types of characters, and passwords with four different types of characters.
-	The functions are inline for performance reasons.
-*/
-
 #include <algorithm>
 #include <string>
 #include "random_char.hpp"
 
 int i = 0;
 std::string password;
-
 
 inline bool allCharactersSame(const std::string& s) {
 	int n = s.length();
@@ -22,8 +14,7 @@ inline bool allCharactersSame(const std::string& s) {
 	return true;
 }
 
-// Functions for generating passwords with all characters of the same type
-inline std::string allNumberPassword(const int& size) { // All digits (1)
+inline std::string allNumberPassword(const int& size) {
 	password = "";
 	while (allCharactersSame(password))
 	{
@@ -34,7 +25,7 @@ inline std::string allNumberPassword(const int& size) { // All digits (1)
 	return password;
 }
 
-inline std::string allSymbolPassword(const int& size) { // All symbols (2)
+inline std::string allSymbolPassword(const int& size) {
 	password = "";
 	while (allCharactersSame(password))
 	{
@@ -44,7 +35,7 @@ inline std::string allSymbolPassword(const int& size) { // All symbols (2)
 	return password;
 }
 
-inline std::string allUppercasePassword(const int& size) { // All uppercase (3)
+inline std::string allUppercasePassword(const int& size) {
 	password = "";
 	while (allCharactersSame(password))
 	{
@@ -55,7 +46,7 @@ inline std::string allUppercasePassword(const int& size) { // All uppercase (3)
 	return password;
 }
 
-inline std::string allLowercasePassword(const int& size) { // All lowercase (4)
+inline std::string allLowercasePassword(const int& size) {
 	password = "";
 	while (allCharactersSame(password))
 	{
@@ -65,8 +56,7 @@ inline std::string allLowercasePassword(const int& size) { // All lowercase (4)
 	return password;
 }
 
-// Functions for generating passwords with two different types of characters
-inline std::string numberAndLowercasePassword(const int& numberOfNumber, const int& numberOfLowercase) { // Numbers and lowercase (5)
+inline std::string numberAndLowercasePassword(const int& numberOfNumber, const int& numberOfLowercase) {
 	password = "";
 	for (i = 0; i < numberOfNumber; i++) password.push_back(randomNumber());
 	for (i = 0; i < numberOfLowercase; i++) password.push_back(randomLowercase());
@@ -74,7 +64,7 @@ inline std::string numberAndLowercasePassword(const int& numberOfNumber, const i
 	return password;
 }
 
-inline std::string numberAndSymbolPassword(const int& numberOfNumber, const int& numberOfSymbol) { // Numbers and symbols (6)
+inline std::string numberAndSymbolPassword(const int& numberOfNumber, const int& numberOfSymbol) {
 	password = "";
 	for (i = 0; i < numberOfNumber; i++) password.push_back(randomNumber());
 	for (i = 0; i < numberOfSymbol; i++) password.push_back(randomSymbol());
@@ -82,7 +72,7 @@ inline std::string numberAndSymbolPassword(const int& numberOfNumber, const int&
 	return password;
 }
 
-inline std::string numberAndUppercasePassword(const int& numberOfNumber, const int& numberOfUppercase) { // Numbers and uppercase (7)
+inline std::string numberAndUppercasePassword(const int& numberOfNumber, const int& numberOfUppercase) {
 	password = "";
 	for (i = 0; i < numberOfNumber; i++) password.push_back(randomNumber());
 	for (i = 0; i < numberOfUppercase; i++) password.push_back(randomUppercase());
@@ -90,7 +80,7 @@ inline std::string numberAndUppercasePassword(const int& numberOfNumber, const i
 	return password;
 }
 
-inline std::string lowercaseAndSymbolPassword(const int& numberOfLowercase, const int& numberOfSymbol) { // Lowercase and symbols (8)
+inline std::string lowercaseAndSymbolPassword(const int& numberOfLowercase, const int& numberOfSymbol) {
 	password = "";
 	for(i = 0; i < numberOfLowercase; i++) password.push_back(randomLowercase()); 
 	for(i = 0; i < numberOfSymbol; i++) password.push_back(randomSymbol()); 
@@ -98,7 +88,7 @@ inline std::string lowercaseAndSymbolPassword(const int& numberOfLowercase, cons
 	return password;
 }
 
-inline std::string uppercaseAndSymbolPassword(const int& numberOfUppercase, const int& numberOfSymbol) { // Uppercase and symbols (9)
+inline std::string uppercaseAndSymbolPassword(const int& numberOfUppercase, const int& numberOfSymbol) {
 	password = "";
 	for(i = 0; i < numberOfUppercase; i++) password.push_back(randomUppercase());
 	for(i = 0; i < numberOfSymbol; i++) password.push_back(randomSymbol());
@@ -106,7 +96,7 @@ inline std::string uppercaseAndSymbolPassword(const int& numberOfUppercase, cons
 	return password;
 }
 
-inline std::string lowercaseAndUppercasePassword(const int& numberOfLowercase, const int& numberOfUppercase) { // Lowercase and uppercase (10)
+inline std::string lowercaseAndUppercasePassword(const int& numberOfLowercase, const int& numberOfUppercase) {
 	password = "";
 	for (i = 0; i < numberOfLowercase; i++) password.push_back(randomLowercase());
 	for (i = 0; i < numberOfUppercase; i++) password.push_back(randomUppercase());
@@ -115,7 +105,7 @@ inline std::string lowercaseAndUppercasePassword(const int& numberOfLowercase, c
 }
 
 // Functions for generating passwords with three different types of characters
-inline std::string lowercaseUppercaseNumberPassword(const int& numberOfUppercase, const int& numberOfLowercase, const int& numberOfNumber) { // Lowercase, uppercase and numbers (11)
+inline std::string lowercaseUppercaseNumberPassword(const int& numberOfUppercase, const int& numberOfLowercase, const int& numberOfNumber) {
 	password = "";
 	for (i = 0; i < numberOfLowercase; i++) password.push_back(randomLowercase());
 	for (i = 0; i < numberOfUppercase; i++) password.push_back(randomUppercase());
@@ -124,7 +114,7 @@ inline std::string lowercaseUppercaseNumberPassword(const int& numberOfUppercase
 	return password;
 }
 
-inline std::string lowercaseUppercaseSymbolPassword(const int& numberOfLowercase, const int& numberOfUppercase, const int& numberOfSymbol) { // Lowercase, uppercase and symbols (12)
+inline std::string lowercaseUppercaseSymbolPassword(const int& numberOfLowercase, const int& numberOfUppercase, const int& numberOfSymbol) {
 	password = "";
 	for (i = 0; i < numberOfLowercase; i++) password.push_back(randomLowercase());
 	for (i = 0; i < numberOfUppercase; i++) password.push_back(randomUppercase());
@@ -133,7 +123,7 @@ inline std::string lowercaseUppercaseSymbolPassword(const int& numberOfLowercase
 	return password;
 }
 
-inline std::string numberUppercaseSymbolPassword(const int& numberOfNumber, const int& numberOfUppercase, const int& numberOfSymbol) { // Numbers, lowercase letters and symbols (13)
+inline std::string numberUppercaseSymbolPassword(const int& numberOfNumber, const int& numberOfUppercase, const int& numberOfSymbol) {
 	password = "";
 	for (i = 0; i < numberOfNumber; i++) password.push_back(randomNumber());
 	for (i = 0; i < numberOfUppercase; i++) password.push_back(randomUppercase());
@@ -142,7 +132,7 @@ inline std::string numberUppercaseSymbolPassword(const int& numberOfNumber, cons
 	return password;
 }
 
-inline std::string numberLowercaseSymbolPassword(const int& numberOfNumber, const int& numberOfLowercase, const int& numberOfSymbol) { // Numbers, uppercase letters, symbols (14)
+inline std::string numberLowercaseSymbolPassword(const int& numberOfNumber, const int& numberOfLowercase, const int& numberOfSymbol) {
 	password = "";
 	for (i = 0; i < numberOfNumber; i++) password.push_back(randomNumber());
 	for (i = 0; i < numberOfLowercase; i++) password.push_back(randomLowercase());
@@ -152,7 +142,7 @@ inline std::string numberLowercaseSymbolPassword(const int& numberOfNumber, cons
 }
 
 // Function for generating passwords with four different types of characters
-inline std::string numberLowercaseUppercaseSymbolPassword(const int& numberOfNumber, const int& numberOfLowercase, const int& numberOfUppercase, const int& numberOfSymbol) { // Numbers, lowercase, uppercase and symbols (15)
+inline std::string numberLowercaseUppercaseSymbolPassword(const int& numberOfNumber, const int& numberOfLowercase, const int& numberOfUppercase, const int& numberOfSymbol) {
 	password = "";
 	for (i = 0; i < numberOfNumber; i++) password.push_back(randomNumber());
 	for (i = 0; i < numberOfLowercase; i++) password.push_back(randomLowercase());
